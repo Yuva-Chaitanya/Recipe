@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern recipe website featuring appetizers, main courses, and desserts.">
+    <meta name="keywords" content="recipes, cooking, food, appetizers, desserts, main courses">
+    <meta name="author" content="Chef's Delight Team">
+    <title>Modern Recipe Website</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Chef's Delight</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/recipes">Recipes</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Intro Section -->
+        <section>
+            <h2>Welcome to Chef's Delight</h2>
+            <p>Discover <mark>delicious</mark> recipes for every occasion.</p>
+        </section>
+
+        <!-- Recipe Categories -->
+        <section>
+            <h2>Recipe Categories</h2>
+            <ul id="categories">
+                <li>Appetizers</li>
+                <li>Main Courses</li>
+                <li>Desserts</li>
+            </ul>
+        </section>
+
+        <!-- Featured Recipes -->
+        <section>
+            <h2>Featured Recipes</h2>
+            <figure>
+                <img src="https://via.placeholder.com/600x400" alt="Delicious pasta">
+                <figcaption>Pasta - A timeless classic.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Vote Section -->
+        <section>
+            <h2>Vote for Your Favorite Recipe</h2>
+            <form id="voteForm">
+                <fieldset>
+                    <legend>Choose a category:</legend>
+                    <input type="radio" id="appetizers" name="category" value="Appetizers">
+                    <label for="appetizers">Appetizers</label><br>
+                    <input type="radio" id="main-courses" name="category" value="Main Courses">
+                    <label for="main-courses">Main Courses</label><br>
+                    <input type="radio" id="desserts" name="category" value="Desserts">
+                    <label for="desserts">Desserts</label>
+                </fieldset>
+                <button type="button" onclick="submitVote()">Vote</button>
+            </form>
+            <p id="voteMessage" style="color: green; margin-top: 10px;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Chef's Delight. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript Interactivity
+
+        // Display a confirmation message when the user votes
+        function submitVote() {
+            const selectedOption = document.querySelector('input[name="category"]:checked');
+            const message = document.getElementById('voteMessage');
+            if (selectedOption) {
+                message.textContent = `Thank you for voting for ${selectedOption.value}!`;
+            } else {
+                message.textContent = 'Please select a category to vote.';
+            }
+        }
+    </script>
+</body>
+
+</html>
